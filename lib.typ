@@ -2,12 +2,13 @@
 #let head-text = text.with(font: "Cantarell", weight: "medium")
 
 #let template(
-  first-name: str,
-  last-name: str,
-  address: str,
-  phone: str,
-  email: str,
+  first-name: "",
+  last-name: "",
+  address: "",
+  phone: "",
+  email: "",
   paper-size: "a4",
+  footer-text: none,
   body,
 ) = {
   // Set document metadata.
@@ -28,7 +29,7 @@
         set align(center)
         let i = counter(page).at(here()).first()
         upper(head-text(size: 0.85em, tracking: 1.2pt)[
-          #last-name Résumé --- Page #i of #total
+          #footer-text Page #i of #total
         ])
       }
     }

@@ -1,11 +1,12 @@
 #import "../lib.typ": *
 #show: template.with(
+  paper-size: "us-letter",
   first-name: "Trixie B.",
   last-name: "Argon",
   address: "5419 Hollywood Blvd Ste c731, Los Angeles, CA 90027",
   phone: "(323) 555 1435",
   email: "trixieargon@gmail.com",
-  paper-size: "us-letter",
+  footer-text: [Argon Résumé ---]
 )
 
 === Education
