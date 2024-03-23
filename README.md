@@ -5,7 +5,7 @@
 A clean and minimal template for your CV or résumé.
 
 This template is inspired by Matthew Butterick's excellent
-[_Practical Typography_](https://practicaltypography.com/resumes.html) book.
+[_Practical Typography_](https://practicaltypography.com) book.
 
 See the [example.pdf](https://github.com/talal/pesha/blob/main/example.pdf) file to see
 how it looks.
