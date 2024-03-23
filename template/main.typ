@@ -2,7 +2,7 @@
 #show: template.with(
   first-name: "Trixie B.",
   last-name: "Argon",
-  address: "5419 Hollywood Blvd c731, Los Angeles, CA 90027",
+  address: "5419 Hollywood Blvd Ste c731, Los Angeles, CA 90027",
   phone: "(323) 555 1435",
   email: "trixieargon@gmail.com",
   paper-size: "us-letter",
@@ -32,10 +32,15 @@
   place: "Boxer Bedley & Ball Capital Advisors",
   title: "Equity analyst",
   time: [2008--11],
+  location: "Earth, Milky Way"
 )[
 - Performed independent research on numerous American industries, including:
 - Steelmaking, croquet, semiotics, and butterscotch manufacturing
 - Led company in equities analyzed in two quarters
+
+#lorem(20)
+
+#lorem(20)
 ]
 
 === Other Work Experience
@@ -57,3 +62,8 @@
 - Inventory management
 - Training and recruiting
 ]
+
+#pagebreak()
+
+=== #lorem(2)
+#lorem(55)
