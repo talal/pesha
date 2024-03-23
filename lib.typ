@@ -20,7 +20,7 @@
   // Set page properties.
   set page(
     paper: paper-size,
-    margin: (x: 3.75cm, top: 4cm, bottom: 3.3cm),
+    margin: (x: 17%, top: 14%, bottom: 11%),
     // Display page number in footer only if there are more than a single page.
     footer: context {
       let total = counter(page).final().first()
