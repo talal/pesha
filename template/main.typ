@@ -1,11 +1,13 @@
-#import "../lib.typ": *
-#show: template.with(
-  paper-size: "us-letter",
-  first-name: "Trixie B.",
-  last-name: "Argon",
+#import "@preview/pesha:0.1.0": *
+
+#show: pesha.with(
+  name: "Trixie B. Argon",
   address: "5419 Hollywood Blvd Ste c731, Los Angeles, CA 90027",
-  phone: "(323) 555 1435",
-  email: "trixieargon@gmail.com",
+  contacts: (
+    [(323) 555 1435],
+    [#link("mailto:trixieargon@gmail.com")],
+  ),
+  paper-size: "us-letter",
   footer-text: [Argon Résumé ---]
 )
 
@@ -33,7 +35,7 @@
   place: "Boxer Bedley & Ball Capital Advisors",
   title: "Equity analyst",
   time: [2008--11],
-  location: "Earth, Milky Way"
+  location: "New York City, USA"
 )[
 - Performed independent research on numerous American industries, including:
 - Steelmaking, croquet, semiotics, and butterscotch manufacturing

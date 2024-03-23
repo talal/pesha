@@ -1,22 +1,19 @@
-// Text settings used across the template.
-#let head-text = text.with(font: "Cantarell", weight: "medium")
-
-#let template(
-  first-name: "",
-  last-name: "",
+#let pesha(
+  name: "",
   address: "",
-  phone: "",
-  email: "",
+  contacts: (),
   paper-size: "a4",
   footer-text: none,
   body,
 ) = {
   // Set document metadata.
-  let name = first-name + " " + last-name
-  set document(title: name + " CV", author: name)
+  set document(title: name, author: name)
 
   // Configure text properties.
   set text(size: 10pt, hyphenate: false)
+
+  // Text settings used across the template.
+  let head-text = text.with(font: "Cantarell", weight: "medium")
 
   // Set page properties.
   set page(
@@ -42,8 +39,10 @@
     #v(1.4em, weak: true)
     #show text: it => { head-text(size: 0.86em, tracking: 1.4pt, it) }
     #address
-    #v(1em, weak: true)
-    #phone #h(1em) #email
+    #if contacts.len() > 0 {
+      v(1em, weak: true)
+      grid(columns: contacts.len(), gutter: 1em, ..contacts )
+    }
     #v(2em, weak: true)
   ]
 
@@ -64,6 +63,7 @@
   body
 }
 
+// This function formats its `body` (content) into a block of experience section.
 #let experience(
   body,
   place: none,
@@ -76,8 +76,8 @@
   block(width: 100%, pad(left: 0.25em)[
     #text(size: 1.4em, place) #h(1fr) #text(size: 1.4em, time)
     #v(1em, weak: true)
-    #if title == none {  v(-1em) }
-    #emph(title) #h(1fr) #text(size: 0.9em, location)
+    #emph(title)
+    #if location != none [ #h(1fr) #text(size: 0.9em, location) ]
     #v(1em, weak: true)
     #body
   ])
