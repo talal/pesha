@@ -76,7 +76,7 @@
     #text(size: 1.4em, place) #h(1fr) #text(size: 1.4em, time)
     #v(1em, weak: true)
     #if title == none {  v(-1em) }
-    #emph(title) #h(1fr) #text(location)
+    #emph(title) #h(1fr) #text(size: 0.9em, location)
     #v(1em, weak: true)
     #body
   ])
