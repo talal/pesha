@@ -1,11 +1,5 @@
-// Workaround for the lack of an `std` scope.
-#let std-smallcaps = smallcaps
-#let std-upper = upper
-
-// Overwrite the default `smallcaps` and `upper` functions with increased spacing between characters.
-// Default tracking is 0pt.
-#let smallcaps(body) = std-smallcaps(text(tracking: 0.6pt, body))
-#let upper(body) = std-upper(text(tracking: 0.6pt, body))
+// Text settings used across the template.
+#let head-text = text.with(font: "Cantarell", weight: "medium")
 
 #let template(
   first-name: str,
@@ -21,48 +15,50 @@
   set document(title: name + " CV", author: name)
 
   // Configure text properties.
-  set text(font: "Cantarell", size: 9pt, hyphenate: false)
+  set text(size: 10pt, hyphenate: false)
 
   // Set page properties.
   set page(
     paper: paper-size,
-    margin: (x: 3cm, y: 4cm),
-    numbering: "1 / 1",
+    margin: (x: 3.75cm, top: 4cm, bottom: 3.3cm),
+    // Display page number in footer only if there are more than a single page.
     footer: context {
-      set align(center)
-      let c-p = counter(page).at(here()).first()
-      let t-p = counter(page).final().first()
-      text(tracking: 1.25pt, std-upper[
-        #last-name Résumé -- Page #c-p of #t-p
-      ])
+      let total = counter(page).final().first()
+      if total > 1 {
+        set align(center)
+        let i = counter(page).at(here()).first()
+        upper(head-text(size: 0.85em, tracking: 1.2pt)[
+          #last-name Résumé --- Page #i of #total
+        ])
+      }
     }
   )
 
-  // Display title.
+  // Display title and contact info.
   align(center)[
-    #text(weight: "semibold", size: 2em)[
-      #std-upper(text(tracking: 3pt, name))
-    ]
-    #v(-1em)
-    #std-upper(text(tracking: 1pt, address))
-
-    #std-upper(text(tracking: 1pt, phone)) #h(1em) #std-upper(text(tracking: 1pt, email))
+    #show text: upper
+    #head-text(size: 1.8em, tracking: 3.2pt, name)
+    #v(1.4em, weak: true)
+    #show text: it => { head-text(size: 0.86em, tracking: 1.4pt, it) }
+    #address
+    #v(1em, weak: true)
+    #phone #h(1em) #email
+    #v(2em, weak: true)
   ]
 
   // Configure heading properties.
   show heading: it => {
-    set text(weight: "extrabold", size: 0.7em)
     line(length: 100%, stroke: 0.5pt)
     pad(
-      top: -0.7em,
+      top: -0.85em,
       left: 0.25em,
-      bottom: 0.8em,
-    )[#upper(it)]
+      bottom: 0.6em,
+      upper(head-text(weight: "black", size: 0.7em, tracking: 0.6pt, it))
+    )
   }
 
   // Configure paragraph properties.
-  show par: set text(font: "Linux Libertine")
-  set par(justify: true, linebreaks: "optimized")
+  set par(leading: 0.7em, justify: true, linebreaks: "optimized")
 
   body
 }
@@ -74,19 +70,24 @@
   location: none,
   time: none,
 ) = {
-  set list(body-indent: 0.65em)
-
-  let gr = grid.with(
-    columns: (auto, 1fr),
-    row-gutter: 0.75em,
-    align: (left, right),
-  )
+  set list(body-indent: 0.85em)
 
   block(width: 100%, pad(left: 0.25em)[
-    #gr(
-      text(size: 1.2em, place), text(size: 1.2em, time),
-      emph(title), text(location)
-    )
+    #text(size: 1.4em, place) #h(1fr) #text(size: 1.4em, time)
+    #v(1em, weak: true)
+    #if title == none {  v(-1em) }
+    #emph(title) #h(1fr) #text(location)
+    #v(1em, weak: true)
     #body
   ])
 }
+
+// Workaround for the lack of an `std` scope.
+#let std-smallcaps = smallcaps
+#let std-upper = upper
+
+// Overwrite the default `smallcaps` and `upper` functions with increased spacing between
+// characters. We do this so that when someone uses these functions they will get spacing
+// which fits in better with the rest of the template.
+#let smallcaps(body) = std-smallcaps(text(tracking: 0.6pt, body))
+#let upper(body) = std-upper(text(tracking: 0.6pt, body))
