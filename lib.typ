@@ -21,13 +21,15 @@
     margin: (x: 17%, top: 14%, bottom: 11%),
     // Display page number in footer only if there are more than a single page.
     footer: context {
+      set align(center)
       let total = counter(page).final().first()
       if total > 1 {
-        set align(center)
         let i = counter(page).at(here()).first()
         upper(head-text(size: 0.85em, tracking: 1.2pt)[
           #footer-text Page #i of #total
         ])
+      } else {
+        footer-text
       }
     }
   )
