@@ -20,6 +20,7 @@ The changes should be grouped using the following categories (in order of preced
 
 ### Changed
 
+- Use _Libertinus Serif_ font, if available, otherwise fall back to _Linux Libertine_.
 - Horizontal margin from 17% to 16%.
 
 ## 0.1.0 - 2024-03-23
