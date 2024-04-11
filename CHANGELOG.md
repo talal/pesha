@@ -14,9 +14,11 @@ The changes should be grouped using the following categories (in order of preced
 - Removed: for now removed features.
 -->
 
-[unreleased]: https://github.com/talal/ilm/compare/v0.1.0...HEAD
+[unreleased]: https://github.com/talal/ilm/compare/v0.2.0...HEAD
 
 ## [Unreleased]
+
+## 0.2.0 - 2024-04-11
 
 ### Changed
 
