@@ -7,7 +7,6 @@
     [(323) 555 1435],
     [#link("mailto:trixieargon@gmail.com")],
   ),
-  paper-size: "us-letter",
   footer-text: [Argon Résumé ---]
 )
 

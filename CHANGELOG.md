@@ -20,6 +20,7 @@ The changes should be grouped using the following categories (in order of preced
 
 ### Changed
 
+- Paper size for template from `us-letter` to `a4`.
 - Use _Libertinus Serif_ font, if available, otherwise fall back to _Linux Libertine_.
 - Horizontal margin from 17% to 16%.
 
