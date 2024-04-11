@@ -14,6 +14,14 @@ The changes should be grouped using the following categories (in order of preced
 - Removed: for now removed features.
 -->
 
+[unreleased]: https://github.com/talal/ilm/compare/v0.1.0...HEAD
+
+## [Unreleased]
+
+### Changed
+
+- Horizontal margin from 17% to 16%.
+
 ## 0.1.0 - 2024-03-23
 
 Initial Release.

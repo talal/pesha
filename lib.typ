@@ -18,7 +18,7 @@
   // Set page properties.
   set page(
     paper: paper-size,
-    margin: (x: 17%, top: 14%, bottom: 11%),
+    margin: (x: 16%, top: 14%, bottom: 11%),
     // Display page number in footer only if there are more than a single page.
     footer: context {
       set align(center)
