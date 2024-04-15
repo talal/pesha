@@ -2,6 +2,7 @@
   name: "",
   address: "",
   contacts: (),
+  profile-picture: none,
   paper-size: "a4",
   footer-text: none,
   body,
@@ -35,17 +36,33 @@
   )
 
   // Display title and contact info.
-  align(center)[
-    #show text: upper
-    #head-text(size: 1.8em, tracking: 3.2pt, name)
-    #v(1.4em, weak: true)
-    #show text: it => { head-text(size: 0.86em, tracking: 1.4pt, it) }
-    #address
-    #if contacts.len() > 0 {
-      v(1em, weak: true)
-      grid(columns: contacts.len(), gutter: 1em, ..contacts )
+  block(width: 100%, below: 1.5em)[
+    #let header-info = {
+      show text: upper
+      head-text(size: 1.8em, tracking: 3.2pt, name)
+      v(1.4em, weak: true)
+      show text: it => { head-text(size: 0.86em, tracking: 1.4pt, it) }
+      address
+      if contacts.len() > 0 {
+        v(1em, weak: true)
+        grid(columns: contacts.len(), gutter: 1em, ..contacts )
+      }
     }
-    #v(2em, weak: true)
+    #if profile-picture != none {
+      grid(
+        columns: (1fr, auto),
+        box(
+          clip: true,
+          width: 3.3cm,
+          height: 3.3cm,
+          radius: 2.5cm,
+          profile-picture,
+        ),
+        align(right + horizon, header-info)
+      )
+    } else {
+      align(center, header-info)
+    }
   ]
 
   // Configure heading properties.

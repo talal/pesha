@@ -32,6 +32,7 @@ This template exports the `pesha` function with the following named arguments:
 | `name` | [string] | A string to specify the author's name.  |
 | `address` | [string] | A string to specify the author's address. |
 | `contacts` | [array] | An array of content to specify your contact information. E.g., phone number, email, LinkedIn, etc. |
+| `profile-picture` | [content] | The result of a call to the [image function] or `none`. For best result, make sure that your image has an 1:1 aspect ratio. |
 | `paper-size` | [string] | Specify a [paper size string] to change the page size (default is `a4`). |
 | `footer-text` | [content] | Content that will be prepended to the page numbering in the footer. |
 
@@ -42,7 +43,7 @@ show rule. If you, however, want to change an existing project to use this templ
 can add a show rule like this at the top of your file:
 
 ```typ
-#import "@preview/pesha:0.2.0": *
+#import "@preview/pesha:0.3.0": *
 
 #show: pesha.with(
   name: "Max Mustermann",
@@ -62,3 +63,4 @@ can add a show rule like this at the top of your file:
 [content]: https://typst.app/docs/reference/foundations/content/
 [string]: https://typst.app/docs/reference/foundations/str/
 [paper size string]: https://typst.app/docs/reference/layout/page#parameters-paper
+[image function]: https://typst.app/docs/reference/visualize/image/
