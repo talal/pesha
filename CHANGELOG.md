@@ -14,14 +14,19 @@ The changes should be grouped using the following categories (in order of preced
 - Removed: for now removed features.
 -->
 
-[unreleased]: https://github.com/talal/ilm/compare/v0.3.0...HEAD
+[unreleased]: https://github.com/talal/ilm/compare/v0.3.1...HEAD
 
 ## [Unreleased]
+
+## 0.3.1 - 2024-04-17
+
+### Added
+
+- Example with profile picture.
 
 ### Changed
 
 - Reduce top margin 14% -> 8.6% when profile picture is displayed in header.
-
 
 ## 0.3.0 - 2024-04-15
 
