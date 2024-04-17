@@ -18,6 +18,11 @@ The changes should be grouped using the following categories (in order of preced
 
 ## [Unreleased]
 
+### Changed
+
+- Reduce top margin 14% -> 8.6% when profile picture is displayed in header.
+
+
 ## 0.3.0 - 2024-04-15
 
 ### Added
