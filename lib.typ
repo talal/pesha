@@ -106,6 +106,34 @@
   ])
 }
 
+// ichxorya's update: Alter the experience function to become a publication function.
+// This function formats its `body` (content) into a block of experience section.
+#let publication(
+  body,
+  tag: none,
+  title: none,
+  author: none,
+  location: none,
+) = {
+  set list(body-indent: 0.85em)
+
+  block(width: 100%, pad(left: 0.25em)[
+    // #text(size: 1.4em, place) #h(1fr) #text(size: 1.4em, time)
+    // #v(1em, weak: true)
+    // #author
+    // #if location != none [ #h(1fr) #text(size: 0.9em, location) ]
+    // #v(1em, weak: true)
+    
+    #text(size: 1.4em,[ \[#tag\] ]) 
+    #v(1em, weak: true)
+
+    #h(1em) #text(size: 0.9em, author),
+    #text(size: 0.9em, ["#title"]),
+    _#text(size: 0.9em, [in #location.])_ 
+    #body
+  ])
+}
+
 // Workaround for the lack of an `std` scope.
 #let std-smallcaps = smallcaps
 #let std-upper = upper
