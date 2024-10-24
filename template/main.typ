@@ -33,7 +33,7 @@
 #experience(
   place: "Boxer Bedley & Ball Capital Advisors",
   title: "Equity analyst",
-  time: [2008--11],
+  time: [01/2008--05/2011],
   location: "New York City, USA"
 )[
 - Performed independent research on numerous American industries, including:
@@ -58,7 +58,7 @@
 #experience(
   place: "Hot Topic",
   title: "Retail-sales associate",
-  time: [2004--06],
+  time: [02/2004--10/2006],
 )[
 - Top in-store sales associate in seven out of eight quarters
 - Inventory management

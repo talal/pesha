@@ -101,7 +101,7 @@
   set list(body-indent: 0.85em)
 
   block(width: 100%, pad(left: 0.25em)[
-    #text(size: 1.4em, place) #h(1fr) #text(size: 1.4em, time)
+    #text(size: 1.4em, place) #h(1fr) #text(size: 1.3em, time)
     #v(1em, weak: true)
     #emph(title)
     #if location != none [ #h(1fr) #text(size: 0.9em, location) ]
