@@ -8,7 +8,11 @@
   body,
 ) = {
   // Set document metadata.
-  set document(title: name, author: name)
+  set document(
+    title: name,
+    author: name,
+    keywords: (name, "curriculum vitae", "cv", "resume"),
+  )
 
   // Configure text properties.
   set text(font: ("Libertinus Serif", "Linux Libertine"), size: 10pt, hyphenate: false)
