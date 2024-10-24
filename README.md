@@ -35,6 +35,7 @@ This template exports the `pesha` function with the following named arguments:
 | `profile-picture` | [content] | The result of a call to the [image function] or `none`. For best result, make sure that your image has an 1:1 aspect ratio. |
 | `paper-size` | [string] | Specify a [paper size string] to change the page size (default is `a4`). |
 | `footer-text` | [content] | Content that will be prepended to the page numbering in the footer. |
+| `page-numbering-format` | [string] | [Pattern](https://typst.app/docs/reference/model/numbering/#parameters-numbering) that will be used for displaying page numbering in the footer (default is `1 of 1`). |
 
 The function also accepts a single, positional argument for the body.
 

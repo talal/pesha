@@ -5,6 +5,7 @@
   profile-picture: none,
   paper-size: "a4",
   footer-text: none,
+  page-numbering-format: "1 of 1",
   body,
 ) = {
   // Set document metadata.
@@ -28,14 +29,14 @@
       top: if profile-picture == none {14%} else {8.6%},
       bottom: 11%
     ),
-    // Display page number in footer only if there are more than a single page.
+    // Display page number in footer only if there is more than one page.
     footer: context {
       set align(center)
       let total = counter(page).final().first()
       if total > 1 {
         let i = counter(page).at(here()).first()
         upper(head-text(size: 0.85em, tracking: 1.2pt)[
-          #footer-text Page #i of #total
+          #footer-text #counter(page).display(page-numbering-format, both: true)
         ])
       } else {
         footer-text
