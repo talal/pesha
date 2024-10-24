@@ -7,7 +7,7 @@
     [(323) 555 1435],
     [#link("mailto:trixieargon@gmail.com")],
   ),
-  footer-text: [Argon Résumé ---]
+  footer-text: [Argon Résumé --- Page#sym.space]
 )
 
 === Education
