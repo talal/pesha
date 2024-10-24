@@ -15,7 +15,7 @@
   )
 
   // Configure text properties.
-  set text(font: ("Libertinus Serif", "Linux Libertine"), size: 10pt, hyphenate: false)
+  set text(size: 10pt, hyphenate: false)
 
   // Text settings used across the template.
   let head-text = text.with(font: "Cantarell", weight: "medium")
