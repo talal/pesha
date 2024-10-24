@@ -25,9 +25,9 @@
   set page(
     paper: paper-size,
     margin: (
-      x: 16%,
-      top: if profile-picture == none {14%} else {8.6%},
-      bottom: 11%
+      x: 14%,
+      top: if profile-picture == none {13%} else {8.6%},
+      bottom: 10%
     ),
     // Display page number in footer only if there is more than one page.
     footer: context {
