@@ -44,7 +44,7 @@ show rule. If you, however, want to change an existing project to use this templ
 can add a show rule like this at the top of your file:
 
 ```typ
-#import "@preview/pesha:0.3.1": *
+#import "@preview/pesha:0.4.0": *
 
 #show: pesha.with(
   name: "Max Mustermann",

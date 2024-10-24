@@ -14,9 +14,26 @@ The changes should be grouped using the following categories (in order of preced
 - Removed: for now removed features.
 -->
 
-[unreleased]: https://github.com/talal/ilm/compare/v0.3.1...HEAD
+[unreleased]: https://github.com/talal/ilm/compare/v0.4.0...HEAD
 
 ## [Unreleased]
+
+## 0.4.0 - 2024-10-24
+
+### Added
+
+- `page-numbering-format` option so that end users can specify the numbering format pattern.
+- Keywords to document metadata: author name, `curriculum vitae`, `cv`, `resume`.
+
+### Changed
+
+- Minimum required compiler version to 0.12.0.
+- Decreased page margins by 1%.
+- Decreased font size for experience time by 0.1em.
+
+### Fixed
+
+- Footer text not using correct styling for single page documents.
 
 ## 0.3.1 - 2024-04-17
 
