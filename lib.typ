@@ -27,12 +27,12 @@
     margin: (
       x: 14%,
       top: if profile-picture == none {13%} else {8.6%},
-      bottom: 10%
+      bottom: 10%,
     ),
     // Display page number in footer only if there is more than one page.
     footer: context {
       set align(center)
-      show text: it => { head-text(size: 0.85em, tracking: 1.2pt, it) }
+      show text: it => head-text(size: 0.85em, tracking: 1.2pt, it)
       let total = counter(page).final().first()
       if total > 1 {
         let i = counter(page).at(here()).first()
@@ -49,11 +49,11 @@
       show text: upper
       head-text(size: 1.8em, tracking: 3.2pt, name)
       v(1.4em, weak: true)
-      show text: it => { head-text(size: 0.86em, tracking: 1.4pt, it) }
+      show text: it => head-text(size: 0.86em, tracking: 1.4pt, it)
       address
       if contacts.len() > 0 {
         v(1em, weak: true)
-        grid(columns: contacts.len(), gutter: 1em, ..contacts )
+        grid(columns: contacts.len(), align: horizon, gutter: 1em, ..contacts)
       }
     }
     #if profile-picture != none {
@@ -80,7 +80,7 @@
       top: -0.85em,
       left: 0.25em,
       bottom: 0.6em,
-      upper(head-text(weight: "black", size: 0.7em, tracking: 0.6pt, it))
+      upper(head-text(weight: "black", size: 0.7em, tracking: 0.6pt, it)),
     )
   }
 
