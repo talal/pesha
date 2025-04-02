@@ -53,7 +53,7 @@
       address
       if contacts.len() > 0 {
         v(1em, weak: true)
-        grid(columns: contacts.len(), gutter: 1em, ..contacts)
+        grid(columns: contacts.len(), align: horizon, gutter: 1em, ..contacts)
       }
     }
     #if profile-picture != none {
