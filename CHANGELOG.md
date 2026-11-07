@@ -2,21 +2,18 @@
 
 All notable changes to Pesha will be documented in this file.
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
+The format is based on [Common Changelog](https://common-changelog.org/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-<!---
-The changes should be grouped using the following categories (in order of precedence):
-- Added: for new features.
-- Changed: for changes in existing functionality.
-- Fixed: for any bug fixes.
-- Deprecated: for soon-to-be removed features.
-- Removed: for now removed features.
--->
+## 0.5.0 - 2026-11-07
 
-[unreleased]: https://github.com/talal/ilm/compare/v0.4.0...HEAD
+### Changed
 
-## [Unreleased]
+- **Breaking:** move `body` parameter to the end of `experience`
+- Use a two-column grid with explicit block spacing in `experience` to prevent line-wrap collisions
+- Use `Cantarell` with `Hanken Grotesk` (and `HK Grotesk`) as fallback for headings and header elements
+- Modernize `smallcaps` and `upper` to wrap `std.smallcaps` and `std.upper` with `0.05em` character tracking and add `all` parameter support to `smallcaps`
+- Bump minimum compiler version to 0.15.0
 
 ## 0.4.0 - 2024-10-24
 

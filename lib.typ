@@ -19,28 +19,29 @@
   set text(size: 10pt, hyphenate: false)
 
   // Text settings used across the template.
-  let head-text = text.with(font: "Cantarell", weight: "medium")
+  let head-text = text.with(
+    font: ("Cantarell", "Hanken Grotesk", "HK Grotesk"),
+    weight: "medium",
+  )
 
   // Set page properties.
   set page(
     paper: paper-size,
     margin: (
       x: 14%,
-      top: if profile-picture == none {13%} else {8.6%},
+      top: if profile-picture == none { 13% } else { 8.6% },
       bottom: 10%,
     ),
     // Display page number in footer only if there is more than one page.
     footer: context {
       set align(center)
       show text: it => head-text(size: 0.85em, tracking: 1.2pt, it)
-      let total = counter(page).final().first()
-      if total > 1 {
-        let i = counter(page).at(here()).first()
+      if counter(page).final().first() > 1 {
         upper[#footer-text #counter(page).display(page-numbering-format, both: true)]
       } else {
         upper[#footer-text]
       }
-    }
+    },
   )
 
   // Display title and contact info.
@@ -66,7 +67,7 @@
           radius: 2.5cm,
           profile-picture,
         ),
-        align(right + horizon, header-info)
+        align(right + horizon, header-info),
       )
     } else {
       align(center, header-info)
@@ -92,30 +93,45 @@
 
 // This function formats its `body` (content) into a block of experience section.
 #let experience(
-  body,
   place: none,
   title: none,
   location: none,
   time: none,
+  body,
 ) = {
   set list(body-indent: 0.85em)
 
-  block(width: 100%, pad(left: 0.25em)[
-    #text(size: 1.4em, place) #h(1fr) #text(size: 1.3em, time)
-    #v(1em, weak: true)
-    #emph(title)
-    #if location != none [ #h(1fr) #text(size: 0.9em, location) ]
-    #v(1em, weak: true)
-    #body
-  ])
+  block(
+    width: 100%,
+    below: 12pt,
+    pad(left: 0.25em)[
+      #grid(
+        columns: (1fr, auto),
+        align: (left, right),
+        column-gutter: 1.5em,
+        row-gutter: 10pt,
+        ..if place != none or time != none {
+          (
+            text(size: 1.4em, place),
+            if time != none { text(size: 1.3em, time) },
+          )
+        },
+        ..if title != none or location != none {
+          (
+            emph(title),
+            if location != none { text(size: 0.9em, location) },
+          )
+        },
+        ..if body != [] and body != none {
+          (grid.cell(colspan: 2)[#body],)
+        },
+      )
+    ],
+  )
 }
-
-// Workaround for the lack of an `std` scope.
-#let std-smallcaps = smallcaps
-#let std-upper = upper
 
 // Overwrite the default `smallcaps` and `upper` functions with increased spacing between
 // characters. We do this so that when someone uses these functions they will get spacing
 // which fits in better with the rest of the template.
-#let smallcaps(body) = std-smallcaps(text(tracking: 0.6pt, body))
-#let upper(body) = std-upper(text(tracking: 0.6pt, body))
+#let smallcaps(body, all: false) = std.smallcaps(all: all, text(tracking: 0.05em, body))
+#let upper(body) = std.upper(text(tracking: 0.05em, body))

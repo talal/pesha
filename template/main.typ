@@ -1,4 +1,4 @@
-#import "@preview/pesha:0.4.0": *
+#import "@preview/pesha:0.5.0": *
 
 #show: pesha.with(
   name: "Trixie B. Argon",
